@@ -1,0 +1,111 @@
+/* spin-wheel */
+.spin-wheel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0px auto;
+  padding: 50px 0px;
+}
+
+.spin-wheel-container .wheel {
+  width: 42.188rem;
+  height: 40.625rem;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  transition: transform 3s ease-in-out;
+}
+.wheel.spinning {
+  transition: transform 3s ease;
+} 
+.segment-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.segment-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.segment-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.segment-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.wheel:has(.segment-1.active) {
+  transform: rotate(22deg);
+}
+.wheel:has(.segment-2.active) {
+  transform: rotate(337deg);
+}
+.wheel:has(.segment-3.active) {
+  transform: rotate(67deg);
+}
+.wheel:has(.segment-4.active) {
+  transform: rotate(112deg);
+}
+.marker {
+  position: absolute;
+  top: 52px;
+  right: 49%;
+}
+.spin-wheel-container button {
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 120px;
+  text-align: center;
+  background-color: black;
+  color: #f7f7f7;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
